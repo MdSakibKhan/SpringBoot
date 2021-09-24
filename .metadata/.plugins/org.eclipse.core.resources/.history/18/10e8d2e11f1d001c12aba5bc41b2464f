@@ -1,0 +1,30 @@
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+@SpringBootApplication
+public class TemplateApplication {
+	
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(TemplateApplication.class, args);
+		
+		Alien a = context.getBean(Alien.class);
+		
+		a.setId(20);
+		a.setName("Sakib");
+		
+		System.out.print(a.getId());
+		System.out.print(a.getName());
+		
+		Alien a2 = context.getBean(Alien.class);
+		
+		a2.setId(25);
+		a2.setName("Rakib");
+		
+		System.out.print(a2.getId());
+		System.out.print(a2.getName());
+	}
+
+}
